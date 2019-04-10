@@ -9,8 +9,9 @@ const CITY_ID = '524901';
 
 class App extends React.Component {
   
-  getWeather = async () => {
-    const api_call = await fetch(`https://samples.openweathermap.org/data/2.5/forecast?id=${CITY_ID}&appid=${API_KEY}`);
+  getWeather = async (e) => {
+    e.preventDefault();
+    const api_call = await fetch(`https://api.openweathermap.org/data/2.5/weather?id=${CITY_ID}&appid=${API_KEY}`);
     const data = await api_call.json();
     console.log(data);
   } 
@@ -22,7 +23,7 @@ class App extends React.Component {
           title="Weather Checker"
           text="Find out temperature, conditions and more..."
         />
-        <Form />
+        <Form getWeather={this.getWeather}/>
         <Weather />
       </div>
     );
