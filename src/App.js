@@ -3,6 +3,13 @@ import './App.css';
 import Titles from './components/Titles';
 import Form from './components/Form';
 import Weather from './components/Weather';
+import styled from 'styled-components';
+
+const Main = styled.main`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 const API_KEY = 'f6d3ccc3be4411b42258113ccd95bfec';
 
@@ -46,7 +53,7 @@ class App extends React.Component {
   
   render() {
     return (
-      <div>
+      <Main>
         <Titles
           title="Weather Checker"
           text="Find out temperature, conditions and more..."
@@ -60,7 +67,7 @@ class App extends React.Component {
           description={this.state.description}
           error={this.state.error}
         />
-      </div>
+      </Main>
     );
   }
 }
