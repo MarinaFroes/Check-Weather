@@ -2,11 +2,13 @@ import React from 'react';
 import './App.css';
 import Titles from './components/Titles';
 import Form from './components/Form';
+import Footer from './components/Footer.js';
 import Weather from './components/Weather';
 import styled from 'styled-components';
 
 const Main = styled.main`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -112,6 +114,7 @@ class App extends React.Component {
               />
           </Info>
         </Container>
+      <Footer />
       </Main>
     );
   }
