@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 const WeatherContainer = styled.div`
   font-size: 1.1rem;
+  text-align: center;
+  height: 50%;
 `;
 
 const ErrorMessage = styled.p`

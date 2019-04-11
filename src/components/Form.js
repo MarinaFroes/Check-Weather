@@ -2,12 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 
 const FormContainer = styled.form`
-  background-color: orange;
+  background-color: ${props => props.color};
   text-align: center;
   display: flex;
   flex-direction: column;
   padding: 3rem;
-  height: 100%;
+  height: 50%;
 `;
 
 const Input = styled.input`

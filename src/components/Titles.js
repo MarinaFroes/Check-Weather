@@ -11,6 +11,11 @@ const TitleContainer = styled.div`
   width: 100%;
   height: 15rem;
   padding: 2rem;
+
+  @media only screen and (min-width: 600px){
+    width: 50%;
+    height: 30rem;
+  }
 `;
 
 const Titles = ({ title, text }) => (

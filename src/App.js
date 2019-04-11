@@ -7,9 +7,45 @@ import styled from 'styled-components';
 
 const Main = styled.main`
   display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+
+  @media only screen and (min-width: 600px){
+    background-color: snow;
+  }
+`;
+
+const Container = styled.div`
+  display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+
+  @media only screen and (min-width: 600px){
+    flex-direction: row;
+    margin: 2rem;
+    justify-content: center;
+    align-items: center;
+    width: 35rem;
+    height: 30rem;
+    box-shadow: 3px 3px 10px grey;
+  }
 `;
+
+const Info = styled.div`
+  display: flex;
+  flex-direction: column;
+  background-color: ${props => props.color};
+  height: 30rem;
+  width: 100%;
+
+  @media only screen and (min-width: 600px){
+    width: 50%;
+  }
+`;
+
 
 const API_KEY = 'f6d3ccc3be4411b42258113ccd95bfec';
 
@@ -54,19 +90,28 @@ class App extends React.Component {
   render() {
     return (
       <Main>
-        <Titles
-          title="Weather Checker"
-          text="Find out temperature, conditions and more..."
-        />
-        <Form getWeather={this.getWeather}/>
-        <Weather
-          temperature={this.state.temperature}
-          city={this.state.city}
-          country={this.state.country}
-          humidity={this.state.humidity}
-          description={this.state.description}
-          error={this.state.error}
-        />
+        <Container>
+          <Titles
+            title="Weather Checker"
+            text="Find out temperature, conditions and more..."
+          />
+          <Info
+            color="palevioletred"
+          >
+            <Form
+              color="palevioletred"
+              getWeather={this.getWeather}
+            />
+            <Weather
+              temperature={this.state.temperature}
+              city={this.state.city}
+              country={this.state.country}
+              humidity={this.state.humidity}
+              description={this.state.description}
+              error={this.state.error}
+              />
+          </Info>
+        </Container>
       </Main>
     );
   }
