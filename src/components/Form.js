@@ -8,37 +8,40 @@ const FormContainer = styled.form`
   flex-direction: column;
   padding: 3rem;
   height: 100%;
-  
-  input {
-    font-size: 1.2rem;
-    margin: 1rem;
-    border: none;
-    background-color: white;
-  }
+`;
 
-  input[type=submit] {
-    background-color: black;
-    width: 10rem;
-    border-radius: 3px;
-    color: white;
-    text-align: center;
-    align-self: center;
-  }
+const Input = styled.input`
+  font-size: 1.2rem;
+  margin: 1rem;
+  border: none;
+  border-radius: 3px;
+  padding: 4px;
+`;
+
+const Submit = styled.input`
+  background-color: black;
+  padding: 5px 15px;
+  border-radius: 3px;
+  color: white;
+  text-align: center;
+  align-self: center;
+  font-size: 1.2rem;
+  margin: 1rem;
 `;
 
 const Form = ({ getWeather }) => (
   <FormContainer onSubmit={getWeather}>
-    <input
+    <Input
       type="text"
       name="city"
       placeholder="City..."
     />
-    <input
+    <Input
       type="text"
       name="country"
       placeholder="Country..."
     />
-    <input
+    <Submit
       type="submit"
       value="Get Weather"
     />
