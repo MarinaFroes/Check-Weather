@@ -5,7 +5,7 @@
 ## Introduction
 
 - I created this project based on the Youtube tutorial "Using APIs in React - Create a Weather Application - Part 1 | React tutorial for Beginners" by Hamza Mirza.
-- My goal was to learn how to create 
+- My goal was to learn how to create a weather application using abd API.
 
 ## How to install and use it?
 
