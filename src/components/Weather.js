@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-const WeatherContainer = styled.div`
+const WeatherContainer = styled.section`
   font-size: 1.1rem;
   text-align: center;
   height: 50%;
@@ -14,13 +14,37 @@ const ErrorMessage = styled.p`
   font-weight: bold;
 `;
 
-const Weather = ({ city, country, temperature, humidity, description, error}) => (
+const Image = styled.img`
+  width: 60px;
+  align-self: center;
+  margin-bottom: 20px;
+`;
+
+const Weather = ({
+  city,
+  country,
+  temperature,
+  humidity,
+  description,
+  iconUrl,
+  error
+}) => (
   <WeatherContainer>
-      {  city && country && <p>Location: {city}, {country}</p>  }
-      {  temperature && <p>Temperature: {temperature}°C</p>  }
-      {  humidity && <p>Humidity: {humidity}% </p>  }
-      {  description && <p>Conditions: {description}</p>  }
-    {error && <ErrorMessage>{error}</ErrorMessage>  }
+    {city && country && (
+      <p>
+        Location: {city}, {country}
+      </p>
+    )}
+    {temperature && <p>Temperature: {temperature}°C</p>}
+    {humidity && <p>Humidity: {humidity}% </p>}
+    {description && <p>Conditions: {description}</p>}
+    { iconUrl && 
+      <Image
+        src={iconUrl}
+        alt=""
+      />
+    }
+    {error && <ErrorMessage>{error}</ErrorMessage>}
   </WeatherContainer>
 );
 

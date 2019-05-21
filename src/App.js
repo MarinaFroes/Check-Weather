@@ -11,8 +11,6 @@ const Main = styled.main`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  width: 100vw;
 
   @media only screen and (min-width: 600px) {
     background-color: snow;
@@ -46,12 +44,6 @@ const Info = styled.div`
   @media only screen and (min-width: 600px) {
     width: 50%;
   }
-`;
-
-const Image = styled.img`
-  width: 60px;
-  align-self: center;
-  margin-bottom: 20px;
 `;
 
 const API_KEY = "f6d3ccc3be4411b42258113ccd95bfec";
@@ -116,11 +108,10 @@ class App extends React.Component {
               humidity={this.state.humidity}
               description={this.state.description}
               error={this.state.error}
+              iconUrl={`https://openweathermap.org/img/w/${
+                this.state.icon
+              }.png`}
             />
-            {this.state.icon && <Image
-              src={`http://openweathermap.org/img/w/${this.state.icon}.png`}
-              alt=""
-            />}
           </Info>
         </Container>
         <Footer />

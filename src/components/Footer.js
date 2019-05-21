@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import styled from "styled-components";
 
@@ -6,6 +6,15 @@ const ContactInfo = styled.footer`
   display: flex;
   justify-content: center;
   flex-direction: column;
+  text-align: center;
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+
+  @media only screen and (min-width: 600px) {
+    background-color: snow;
+    color: #000;
+  }
 `;
 
 const IconContainer = styled.div`
@@ -24,10 +33,7 @@ const Footer = () => (
   <ContactInfo>
     <p>Page written by Marina Froes A. Costa</p>
     <IconContainer>
-      <Icon
-        href="https://github.com/MarinaFroes"
-        target="_blank"
-      >
+      <Icon href="https://github.com/MarinaFroes" target="_blank">
         {<FaGithub />}
       </Icon>
       <Icon
@@ -38,6 +44,6 @@ const Footer = () => (
       </Icon>
     </IconContainer>
   </ContactInfo>
-)
+);
 
 export default Footer;
